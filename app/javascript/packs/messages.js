@@ -2,22 +2,27 @@ import 'channels'
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import MessagesChannel from 'channels/messages_channel'
+import { API_ROOT, HEADERS } from '../constants'
 
 const MessagesBoard = () => {
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
+  const corsToken = document.querySelector('[name=csrf-token]').content
 
   useEffect(() => {
-    MessagesChannel.recieved = (data) => setMessages(data.messages)
-  }, [messages])
+    MessagesChannel.recieved = (data) => {
+      console.log(data)
+      setMessages(data.messages)
+    }
+  }, [])
 
   const handleSubmit = async (e) => {
     e.preventDefault()
-    await fetch('http://localhost:3000/messages', {
+    await fetch(`${API_ROOT}/messages`, {
       method: 'POST',
       headers: {
-        'Content-Type': 'application/json',
-        //'X-CSRF-TOKEN': document.querySelector('[name=csrf-token]')
+        ...HEADERS,
+        'X-CSRF-TOKEN': corsToken
       },
       body: JSON.stringify({ message })
     })
