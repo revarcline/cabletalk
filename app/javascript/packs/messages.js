@@ -1,8 +1,7 @@
 import 'channels'
 import React, {useState, useEffect} from 'react'
-import ReactDOM from 'react-dom'
 import MessagesChannel from 'channels/messages_channel'
-import { Button, TextField } from '@material-ui/core'
+import { Button, TextField, Grid, List, ListItem } from '@material-ui/core'
 import { API_ROOT, HEADERS } from '../constants'
 
 const MessagesBoard = () => {
@@ -30,16 +29,25 @@ const MessagesBoard = () => {
   }
 
   return (
-    <div>
+    <Grid container spacing={1}>
+      <Grid container direction="row">
+        <Grid container item xs="9">
       <TextField type="text" value={message} placeholder="Chat away!"
         onChange={({target: { value }}) => setMessage(value)} />
+        </Grid>
+        <Grid container item xs="3">
       <Button variant="contained" onClick={handleSubmit}>Send message</Button>
-      <ul>
+        </Grid>
+      </Grid>
+
+      <Grid container direction="row">
+      <List>
         {messages.map((message) => (
-          <li key={message.id}>{message.content}</li>
+          <ListItem key={message.id}>{message.content}</ListItem>
         ))}
-      </ul>
-    </div>
+      </List>
+      </Grid>
+    </Grid>
   )
 }
 

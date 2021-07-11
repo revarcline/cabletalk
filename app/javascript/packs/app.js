@@ -1,9 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import MessagesBoard from './messages'
+import { Container } from '@material-ui/core'
 
 const App = () => {
-  return (<MessagesBoard />)
+  return (
+    <Container>
+      <MessagesBoard />
+    </Container>
+)
 }
 
 document.addEventListener('DOMContentLoaded', () => {
