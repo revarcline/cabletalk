@@ -1,6 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import MessagesBoard from 'messages'
+import MessagesBoard from './messages'
 
 const App = () => {
   return (<MessagesBoard />)
