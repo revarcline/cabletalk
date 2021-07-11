@@ -2,6 +2,7 @@ import 'channels'
 import React, {useState, useEffect} from 'react'
 import ReactDOM from 'react-dom'
 import MessagesChannel from 'channels/messages_channel'
+import { Button, TextField } from '@material-ui/core'
 import { API_ROOT, HEADERS } from '../constants'
 
 const MessagesBoard = () => {
@@ -11,7 +12,6 @@ const MessagesBoard = () => {
 
   useEffect(() => {
     MessagesChannel.received = (data) => {
-      console.log(data)
       setMessages(data.messages)
     }
   }, [])
@@ -31,9 +31,9 @@ const MessagesBoard = () => {
 
   return (
     <div>
-      <input type="text" value={message}
+      <TextField type="text" value={message} placeholder="Chat away!"
         onChange={({target: { value }}) => setMessage(value)} />
-      <button onClick={handleSubmit}>Send message</button>
+      <Button variant="contained" onClick={handleSubmit}>Send message</Button>
       <ul>
         {messages.map((message) => (
           <li key={message.id}>{message.content}</li>

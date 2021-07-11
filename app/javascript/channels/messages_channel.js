@@ -11,6 +11,8 @@ const MessagesChannel = consumer.subscriptions.create("MessagesChannel", {
 
   received(data) {
     // Called when there's incoming data on the websocket for this channel
+    // just calling data to prevent unused variable warning
+    data
   }
 });
 
