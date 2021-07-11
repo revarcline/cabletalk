@@ -10,7 +10,7 @@ const MessagesBoard = () => {
   const corsToken = document.querySelector('[name=csrf-token]').content
 
   useEffect(() => {
-    MessagesChannel.recieved = (data) => {
+    MessagesChannel.received = (data) => {
       console.log(data)
       setMessages(data.messages)
     }
