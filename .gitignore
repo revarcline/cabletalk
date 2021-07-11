@@ -10,6 +10,9 @@
 # hide some stuff in .env
 .env
 
+# binstubs go bye
+/.bin/*
+
 # Ignore all logfiles and tempfiles.
 /log/*
 /tmp/*
