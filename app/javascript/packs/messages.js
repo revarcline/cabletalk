@@ -43,6 +43,4 @@ const MessagesBoard = () => {
   )
 }
 
-document.addEventListener('DOMContentLoaded', () => {
-  ReactDOM.render(<MessagesBoard />, document.body.appendChild(document.createElement('div')) )
-})
+export default MessagesBoard

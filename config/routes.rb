@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
   mount ActionCable.server => '/cable'
-  resources :messages, only: %i[index create]
+  get '/', to 'pages#index' 
+  resources :messages, only: %i[create]
 end
