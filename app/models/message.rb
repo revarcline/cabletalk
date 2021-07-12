@@ -10,4 +10,8 @@ class Message < ApplicationRecord
   def chat_json
     as_json(methods: :username)
   end
+
+  def self.all_chats
+    all.map(&:chat_json)
+  end
 end
