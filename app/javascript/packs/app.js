@@ -1,11 +1,13 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import MessagesBoard from './messages'
-import { Container } from '@material-ui/core'
+import NavBar from './navbar'
+import { Container, Grid } from '@material-ui/core'
 
 const App = () => {
   return (
     <Container>
+      <NavBar />
       <MessagesBoard />
     </Container>
 )
