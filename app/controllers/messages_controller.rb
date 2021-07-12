@@ -4,6 +4,6 @@ class MessagesController < ApplicationController
     user = User.first
 
     Message.create(content: params[:message], user: user)
-    ActionCable.server.broadcast('messages', { messages: Message.all })
+    ActionCable.server.broadcast('messages', { messages: Message.all_chats })
   end
 end

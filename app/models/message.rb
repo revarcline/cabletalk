@@ -1,6 +1,5 @@
 class Message < ApplicationRecord
   include ActiveModel::Serializers::JSON
-  attr_accessor
   belongs_to :user
 
   def username

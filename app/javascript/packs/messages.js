@@ -16,7 +16,6 @@ const MessagesBoard = () => {
   useEffect(() => {
     MessagesChannel.received = (data) => {
       setMessages(data.messages)
-      console.log(data.messages)
     }
   }, [])
 
