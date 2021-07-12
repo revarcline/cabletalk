@@ -31,11 +31,11 @@ const MessagesBoard = () => {
   return (
     <Grid container spacing={1}>
       <Grid container direction="row">
-        <Grid container item xs="9">
+        <Grid container item xs={9}>
       <TextField type="text" value={message} placeholder="Chat away!"
         onChange={({target: { value }}) => setMessage(value)} />
         </Grid>
-        <Grid container item xs="3">
+        <Grid container item xs={3}>
       <Button variant="contained" onClick={handleSubmit}>Send message</Button>
         </Grid>
       </Grid>
