@@ -1,6 +1,8 @@
 import React from 'react'
-import {AppBar, Popover, Button, Toolbar, Typography} from '@material-ui/core'
+import {AppBar, Toolbar, Typography} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
+import NavPopover from './navpopover'
+import SignUp from './signup'
 
 const useStyles = makeStyles((theme) => ( { 
   root: { 
@@ -24,19 +26,9 @@ const NavBar = () => {
       <Typography className={classes.title} variant="h6">
         CableTalk
       </Typography>
-    <Button color="inherit">Login</Button>
-<Popover 
-  anchorOrigin={{
-    vertical: 'bottom',
-    horizontal: 'center',
-  }}
-  transformOrigin={{
-    vertical: 'top',
-    horizontal: 'center',
-  }}
->
-  The content of the Popover.
-</Popover>
+    {/* put a logged_in conditional here  */}      
+      <NavPopover title="Sign Up" ChildComponent={SignUp} />
+    {/* end conditional */}
     </Toolbar>
     </AppBar>
     </div>
