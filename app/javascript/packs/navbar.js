@@ -3,6 +3,7 @@ import {AppBar, Toolbar, Typography} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 import NavPopover from './navpopover'
 import SignUp from './signup'
+import LogIn from './login'
 
 const useStyles = makeStyles((theme) => ( { 
   root: { 
@@ -28,6 +29,7 @@ const NavBar = () => {
       </Typography>
     {/* put a logged_in conditional here  */}      
       <NavPopover title="Sign Up" ChildComponent={SignUp} />
+      <NavPopover title="Log In" ChildComponent={LogIn} />
     {/* end conditional */}
     </Toolbar>
     </AppBar>

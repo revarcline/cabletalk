@@ -7,7 +7,6 @@ import { API_ROOT, HEADERS } from '../constants'
 const MessagesBoard = () => {
   const [messages, setMessages] = useState([])
   const [message, setMessage] = useState('')
-  const corsToken = document.querySelector('[name=csrf-token]').content
 
   useEffect(() => {
     MessagesChannel.received = (data) => {
@@ -21,7 +20,6 @@ const MessagesBoard = () => {
       method: 'POST',
       headers: {
         ...HEADERS,
-        'X-CSRF-TOKEN': corsToken
       },
       body: JSON.stringify({ message })
     })
