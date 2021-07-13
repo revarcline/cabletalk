@@ -1,6 +1,5 @@
 import React from 'react'
-import {AppBar, IconButton, Toolbar, Typography} from '@material-ui/core'
-import MenuIcon from '@material-ui/icons/Menu'
+import {AppBar, Popover, Button, Toolbar, Typography} from '@material-ui/core'
 import { makeStyles } from '@material-ui/core/styles'
 
 const useStyles = makeStyles((theme) => ( { 
@@ -22,12 +21,22 @@ const NavBar = () => {
     <div className={classes.root}>
     <AppBar position="static">
     <Toolbar>
-      <IconButton edge="start" className={classes.menuButton} color="inherit" aria-label="menu">
-        <MenuIcon />
-      </IconButton>
       <Typography className={classes.title} variant="h6">
         CableTalk
       </Typography>
+    <Button color="inherit">Login</Button>
+<Popover 
+  anchorOrigin={{
+    vertical: 'bottom',
+    horizontal: 'center',
+  }}
+  transformOrigin={{
+    vertical: 'top',
+    horizontal: 'center',
+  }}
+>
+  The content of the Popover.
+</Popover>
     </Toolbar>
     </AppBar>
     </div>

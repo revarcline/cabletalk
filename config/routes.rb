@@ -4,6 +4,7 @@ Rails.application.routes.draw do
   root 'pages#index'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
+  post '/signup', to: 'users#create'
   resources :messages, only: %i[create]
-  resources :users
+  resources :users, only: %i[update destroy]
 end
